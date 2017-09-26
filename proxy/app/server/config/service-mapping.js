@@ -16,9 +16,12 @@
 
 const _ = require('underscore');
 
+var localproxybridge = "http://172.20.1.157:33321"
+var localUIServer = "http://127.0.0.1:3000"
+
 const authorization = {
     "path": "/authorization",
-    "host": process.env["AUTHORIZATION_HOST"],
+    "host": localproxybridge,
     "name": "sso",
     "proxyTimeout": 1000,
     "timeoutRedirectionPage": "wait.html"
@@ -26,51 +29,51 @@ const authorization = {
 
 const serviceMapping = [authorization, {
     "path": "/v1/workflows",
-    "host": process.env["WORKFLOW_MANAGER_HOST"],
+    "host": localproxybridge,
     "name": "workflow-manager",
     "proxyTimeout": 100000,
     "auth": "basic"
 }, {
     "path": "/v1/presets",
-    "host": process.env["WORKFLOW_MANAGER_HOST"],
+    "host": localproxybridge,
     "name": "workflow-manager",
     "auth": "basic"
 }, {
     "path": "/v1/operations",
-    "host": process.env["WORKFLOW_MANAGER_HOST"],
+    "host": localproxybridge,
     "name": "workflow-manager",
     "auth": "basic"
 }, {
     "path": "/v1/sessions",
-    "host": process.env["SESSION_MANAGER_HOST"],
+    "host": localproxybridge,
     "name": "session-manager"
 }, {
     "path": "/datasourcemanager/v1",
-    "host": process.env["DATASOURCE_MANAGER_HOST"],
+    "host": localproxybridge,
     "name": "datasource-manager"
 }, {
     "path": "/schedulingmanager/v1",
-    "host": process.env["SCHEDULING_MANAGER_HOST"],
+    "host": localproxybridge,
     "name": "scheduling-manager"
 }, {
     "path": "/jupyter",
-    "host": process.env["JUPYTER_HOST"],
+    "host": localproxybridge,
     "name": "jupyter"
 }, {
     "path": "/library",
-    "host": process.env["LIBRARY_HOST"],
+    "host": localproxybridge,
     "name": "library"
 }, {
     "path": "/stomp",
-    "host": process.env["RABBITMQ_HOST"],
+    "host": localproxybridge,
     "name": "rabbitmq"
 }, {
     "path": "/docs",
-    "host": process.env["DOCUMENTATION_HOST"],
+    "host": localproxybridge,
     "name": "documentation"
 }, {
     "path": "/",
-    "host": process.env["FRONTEND_HOST"],
+    "host": localUIServer,
     "name": "frontend"
 }];
 

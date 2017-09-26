@@ -39,6 +39,7 @@ var host = process.env.HOST || "0.0.0.0";
 
 var server = http.createServer(app);
 
+console.info("server running at "+port)
 /**
  * Listen on provided port, on all network interfaces.
  */

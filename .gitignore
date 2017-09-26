@@ -53,3 +53,4 @@ docker-compose.yml
 deployment/mesos-spark-docker/Dockerfile
 
 /credentials/
+.vscode/launch.json
