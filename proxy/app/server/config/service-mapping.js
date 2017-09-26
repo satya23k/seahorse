@@ -16,12 +16,9 @@
 
 const _ = require('underscore');
 
-var localproxybridge = "http://172.20.1.157:33321"
-var localUIServer = "http://127.0.0.1:3000"
-
 const authorization = {
     "path": "/authorization",
-    "host": localproxybridge,
+    "host": process.env["AUTHORIZATION_HOST"],
     "name": "sso",
     "proxyTimeout": 1000,
     "timeoutRedirectionPage": "wait.html"
@@ -29,51 +26,51 @@ const authorization = {
 
 const serviceMapping = [authorization, {
     "path": "/v1/workflows",
-    "host": localproxybridge,
+    "host": process.env["WORKFLOW_MANAGER_HOST"],
     "name": "workflow-manager",
     "proxyTimeout": 100000,
     "auth": "basic"
 }, {
     "path": "/v1/presets",
-    "host": localproxybridge,
+    "host": process.env["WORKFLOW_MANAGER_HOST"],
     "name": "workflow-manager",
     "auth": "basic"
 }, {
     "path": "/v1/operations",
-    "host": localproxybridge,
+    "host": process.env["WORKFLOW_MANAGER_HOST"],
     "name": "workflow-manager",
     "auth": "basic"
 }, {
     "path": "/v1/sessions",
-    "host": localproxybridge,
+    "host": process.env["SESSION_MANAGER_HOST"],
     "name": "session-manager"
 }, {
     "path": "/datasourcemanager/v1",
-    "host": localproxybridge,
+    "host": process.env["DATASOURCE_MANAGER_HOST"],
     "name": "datasource-manager"
 }, {
     "path": "/schedulingmanager/v1",
-    "host": localproxybridge,
+    "host": process.env["SCHEDULING_MANAGER_HOST"],
     "name": "scheduling-manager"
 }, {
     "path": "/jupyter",
-    "host": localproxybridge,
+    "host": process.env["JUPYTER_HOST"],
     "name": "jupyter"
 }, {
     "path": "/library",
-    "host": localproxybridge,
+    "host": process.env["LIBRARY_HOST"],
     "name": "library"
 }, {
     "path": "/stomp",
-    "host": localproxybridge,
+    "host": process.env["RABBITMQ_HOST"],
     "name": "rabbitmq"
 }, {
     "path": "/docs",
-    "host": localproxybridge,
+    "host": process.env["DOCUMENTATION_HOST"],
     "name": "documentation"
 }, {
     "path": "/",
-    "host": localUIServer,
+    "host": process.env["FRONTEND_HOST"],
     "name": "frontend"
 }];
 

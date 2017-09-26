@@ -191,7 +191,7 @@ module.exports = {
     // 'keyword-spacing'
     // enforce consistent spacing before and after keywords
     'line-comment-position': 'off',
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
     'lines-around-comment': 'off',
     'lines-around-directive': ['error', 'always'],
     'max-depth': ['warn', 4],
