@@ -1,5 +1,5 @@
 /**
- * Copyright 2016 deepsense.ai (CodiLime, Inc)
+ * Copyright 2017 deepsense.ai (CodiLime, Inc)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-package ai.deepsense.sparkutils.readwritedataframe
+require('./feedback.css');
 
-import scala.language.reflectiveCalls
+const FeedbackComponent = {
+  template: `
+    <div class="feedback-button-container">
+      <a href="https://community.seahorse.deepsense.ai" target="blank" class="feedback-button">feedback</a>
+    </div>
+  `
+};
 
-// TODO duplicated from ai.deepsense.commons.resources.ManagedResource
-
-object ManagedResource {
-  def apply[T, Q](c: T {def close(): Unit})(f: (T) => Q): Q = {
-    try {
-      f(c)
-    } finally {
-      c.close()
-    }
-  }
-}
+export default FeedbackComponent;

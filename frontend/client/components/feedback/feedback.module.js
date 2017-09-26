@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 deepsense.ai (CodiLime, Inc)
+ * Copyright 2017 deepsense.ai (CodiLime, Inc)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,14 @@
  * limitations under the License.
  */
 
-name := "seahorse-executor-sparkutils1.6.1"
+'use strict';
 
-libraryDependencies ++= Dependencies.sparkutils("1.6.1")
+// Libs
+import angular from 'angular';
+
+// App
+import FeedbackComponent from './feedback.component';
+
+export const FeedbackModule = angular.module('feedback', [])
+  .component('feedback', FeedbackComponent)
+  .name;

@@ -22,11 +22,12 @@ import angular from 'angular';
 // App
 import { datasourcesModule } from './datasources/datasources.module';
 import { SchedulesModule } from './schedules/schedules.module';
-
+import { FeedbackModule } from './feedback/feedback.module';
 
 export const ComponentModule = angular
   .module('components', [
     datasourcesModule,
-    SchedulesModule
+    SchedulesModule,
+    FeedbackModule
   ])
   .name;
